@@ -1,7 +1,8 @@
-import { randomWords } from "../src/util";
+import { randomWords } from "../public/util";
 
 export default function App() {
-  const words = randomWords;
-
-  return <div>Hangman Game</div>;
+  return;
+  <div>
+    <div>Hangman Game</div>
+  </div>;
 }
