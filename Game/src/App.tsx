@@ -1,4 +1,4 @@
-import { randomWords } from "../public/util";
+//import { randomWords } from "../public/util";
 
 export default function App() {
   return (
@@ -9,6 +9,14 @@ export default function App() {
           <div className="verticlePost" />
           <div className="rope" />
           <div className="horizontalBottomPost" />
+          <div className="stickManSection">
+            <div className="head" />
+            <div className="torso" />
+            <div className="leftArm" />
+            <div className="rightArm" />
+            <div className="leftLeg" />
+            <div className="rightLeg" />
+          </div>
         </div>
       </div>
     </div>
