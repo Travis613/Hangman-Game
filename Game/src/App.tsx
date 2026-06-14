@@ -1,5 +1,7 @@
 //import { randomWords } from "../public/util";
 
+import { Stickman } from "./components/Stickman";
+
 export default function App() {
   return (
     <div className="documentBody">
@@ -10,12 +12,7 @@ export default function App() {
           <div className="rope redunantStyles" />
           <div className="horizontalBottomPost redunantStyles" />
           <div className="stickManSection">
-            <div className="head redunantStyles" />
-            <div className="torso redunantStyles" />
-            <div className="leftArm redunantStyles" />
-            <div className="rightArm redunantStyles" />
-            <div className="leftLeg redunantStyles" />
-            <div className="rightLeg redunantStyles" />
+            <Stickman />
           </div>
         </div>
       </div>
