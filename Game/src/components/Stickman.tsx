@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function Stickman() {
   const [head, setHead] = useState(false);

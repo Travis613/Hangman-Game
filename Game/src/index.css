@@ -11,7 +11,7 @@ body {
 }
 
 .hangindSectionWithStickFigure {
-  height: 50%;
+  height: 45%;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -45,7 +45,7 @@ body {
   width: 1px;
   height: 10%;
   left: 28.7em;
-  bottom: 21em;
+  bottom: 19em;
 }
 
 .horizontalBottomPost {
@@ -106,4 +106,10 @@ body {
   transform: rotate(330deg);
   bottom: 13.5em;
   left: 6.7em;
+}
+
+.wordSection {
+  width: 100wv;
+  height: 10%;
+  margin-top: 0;
 }
