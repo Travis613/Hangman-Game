@@ -1,6 +1,5 @@
-//import { randomWords } from "../public/util";
-
 import { Stickman } from "./components/Stickman";
+import { Word } from "./components/Word";
 
 export default function App() {
   return (
@@ -16,7 +15,9 @@ export default function App() {
           </div>
         </div>
       </div>
-      <div className="wordSection"></div>
+      <div className="wordSection">
+        <Word />
+      </div>
     </div>
   );
 }

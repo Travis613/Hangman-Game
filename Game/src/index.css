@@ -112,4 +112,19 @@ body {
   width: 100wv;
   height: 10%;
   margin-top: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+  justify-content: center;
+}
+
+.letterSection {
+  width: 75px;
+  height: 75px;
+  border: solid;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
 }
