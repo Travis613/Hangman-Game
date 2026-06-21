@@ -5,7 +5,7 @@ interface Props {
 export default function Key({ letter }: Props) {
   return (
     <>
-      <div className="key">{letter}</div>
+      <button className="key">{letter}</button>
     </>
   );
 }

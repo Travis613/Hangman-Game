@@ -131,12 +131,23 @@ body {
 }
 
 .key {
-  height: 60px;
-  width: 60px;
+  height: 80px;
+  width: 80px;
   border: solid;
   border-radius: 15px;
   font-size: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+  flex-wrap: wrap;
+}
+
+.keyboardSection {
+  margin: 30px;
 }
