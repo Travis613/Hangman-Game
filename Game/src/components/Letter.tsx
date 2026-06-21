@@ -1,11 +1,18 @@
+import { useState } from "react";
+
 interface Props {
   letter: string | null;
+  visable: boolean;
 }
 
-export function Letter({ letter }: Props) {
+export function Letter({ letter, visable }: Props) {
   return (
     <>
-      <div className="letterSection">{letter}</div>
+      {visable ? (
+        <div className="letterSection">{letter}</div>
+      ) : (
+        <div className="letterSection" />
+      )}
     </>
   );
 }
