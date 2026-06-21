@@ -129,3 +129,14 @@ body {
   font-size: 60px;
   font-style: bold;
 }
+
+.key {
+  height: 60px;
+  width: 60px;
+  border: solid;
+  border-radius: 15px;
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

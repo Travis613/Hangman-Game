@@ -1,3 +1,4 @@
+import Key from "./components/key";
 import { Stickman } from "./components/Stickman";
 import { Word } from "./components/Word";
 
@@ -17,6 +18,9 @@ export default function App() {
       </div>
       <div className="wordSection">
         <Word />
+      </div>
+      <div className="keyboardSection">
+        <Key letter={"a"} />
       </div>
     </div>
   );
