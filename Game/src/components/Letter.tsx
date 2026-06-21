@@ -1,5 +1,5 @@
 interface Props {
-  letter: string;
+  letter: string | null;
 }
 
 export function Letter({ letter }: Props) {
