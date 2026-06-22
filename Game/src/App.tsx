@@ -2,6 +2,8 @@ import { Keyboard } from "./components/Keyboard";
 import { Stickman } from "./components/Stickman";
 import { Word } from "./components/Word";
 
+// testing something
+
 export default function App() {
   return (
     <div className="documentBody">
