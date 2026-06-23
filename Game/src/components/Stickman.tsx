@@ -1,13 +1,22 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-export function Stickman() {
-  const [head, setHead] = useState(false);
-  const [torso, setTorso] = useState(false);
-  const [leftArm, setLeftArm] = useState(false);
-  const [rightArm, setRightArm] = useState(false);
-  const [leftLeg, setLeftLeg] = useState(false);
-  const [rightLeg, setRightLeg] = useState(false);
+interface Props {
+  head: boolean;
+  torso: boolean;
+  leftArm: boolean;
+  rightArm: boolean;
+  leftLeg: boolean;
+  rightLeg: boolean;
+}
 
+export function Stickman({
+  head,
+  torso,
+  leftArm,
+  rightArm,
+  leftLeg,
+  rightLeg,
+}: Props) {
   return (
     <>
       <div
