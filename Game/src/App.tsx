@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Keyboard } from "./components/Keyboard";
 import { Stickman } from "./components/Stickman";
 import { Word } from "./components/Word";
+import { words } from "../public/util";
 
 export default function App() {
   const [head, setHead] = useState(false);
@@ -10,6 +11,10 @@ export default function App() {
   const [rightArm, setRightArm] = useState(false);
   const [leftLeg, setLeftLeg] = useState(false);
   const [rightLeg, setRightLeg] = useState(false);
+
+  const [word, setWord] = useState<string>(
+    words[Math.floor(Math.random() * words.length)],
+  );
 
   return (
     <div className="documentBody">
@@ -32,7 +37,7 @@ export default function App() {
         </div>
       </div>
       <div className="wordSection">
-        <Word />
+        <Word word={word} />
       </div>
       <div className="keyboardSection">
         <Keyboard />

@@ -2,7 +2,7 @@ import { useState } from "react";
 
 interface Props {
   letter: string | null;
-  visable: boolean;
+  visable?: boolean;
 }
 
 export function Letter({ letter, visable }: Props) {
