@@ -4,37 +4,33 @@ import { Letter } from "./Letter";
 
 interface Props {
   word: string;
-  guessedLetters: string[];
+  guessedLetter: string;
 }
 
-export function Word({ word, guessedLetters }: Props) {
-  const [letter1, setLetter1] = useState<boolean | null>(true);
-  const [letter2, setLetter2] = useState<boolean | null>(true);
-  const [letter3, setLetter3] = useState<boolean | null>(true);
-  const [letter4, setLetter4] = useState<boolean | null>(true);
-  const [letter5, setLetter5] = useState<boolean | null>(true);
-  const [letter6, setLetter6] = useState<boolean | null>(true);
-  const [letter7, setLetter7] = useState<boolean | null>(true);
-  const [letter8, setLetter8] = useState<boolean | null>(true);
-  const [letter9, setLetter9] = useState<boolean | null>(true);
-  const [letter10, setLetter10] = useState<boolean | null>(true);
+export function Word({ word, guessedLetter }: Props) {
+  const [letter1, setLetter1] = useState<boolean | null>(false);
+  const [letter2, setLetter2] = useState<boolean | null>(false);
+  const [letter3, setLetter3] = useState<boolean | null>(false);
+  const [letter4, setLetter4] = useState<boolean | null>(false);
+  const [letter5, setLetter5] = useState<boolean | null>(false);
+  const [letter6, setLetter6] = useState<boolean | null>(false);
+  const [letter7, setLetter7] = useState<boolean | null>(false);
+  const [letter8, setLetter8] = useState<boolean | null>(false);
+  const [letter9, setLetter9] = useState<boolean | null>(false);
+  const [letter10, setLetter10] = useState<boolean | null>(false);
 
   useEffect(() => {
     identifyCorrectLetters();
   });
 
   function identifyCorrectLetters() {
-    let correctLetters: string[] = [];
+    let correctlyGuessedLetters: string[] = [];
     let counter = 0;
     for (let x = 0; x < word.length; x++) {
-      for (let j = 0; j < guessedLetters.length; j++) {
-        if (word[x] === guessedLetters[j]) {
-          counter++;
-          correctLetters.push(word[x]);
-          console.log(
-            `interation:${counter} correctletters: ${correctLetters}`,
-          );
-        }
+      if (word[x] === guessedLetter) {
+        counter++;
+        correctlyGuessedLetters.push(word[x]);
+        console.log("Correct!");
       }
     }
   }

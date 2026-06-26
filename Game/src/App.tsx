@@ -37,37 +37,7 @@ export default function App() {
         </div>
       </div>
       <div className="wordSection">
-        <Word
-          word={word}
-          guessedLetters={[
-            "a",
-            "b",
-            "c",
-            "d",
-            "e",
-            "f",
-            "g",
-            "h",
-            "i",
-            "j",
-            "k",
-            "l",
-            "m",
-            "n",
-            "o",
-            "p",
-            "q",
-            "r",
-            "s",
-            "t",
-            "u",
-            "v",
-            "w",
-            "x",
-            "y",
-            "z",
-          ]}
-        />
+        <Word word={word} guessedLetter={""} />
       </div>
       <div className="keyboardSection">
         <Keyboard />
