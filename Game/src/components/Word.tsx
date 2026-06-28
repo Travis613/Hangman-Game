@@ -8,6 +8,10 @@ interface Props {
 }
 
 export function Word({ word, guessedLetter }: Props) {
+  /* 
+    Any given word can have a max of 10 letters however not all do
+    so any state that is not used will be set to null 
+  */
   const [letter1, setLetter1] = useState<boolean | null>(false);
   const [letter2, setLetter2] = useState<boolean | null>(false);
   const [letter3, setLetter3] = useState<boolean | null>(false);
@@ -19,10 +23,6 @@ export function Word({ word, guessedLetter }: Props) {
   const [letter9, setLetter9] = useState<boolean | null>(false);
   const [letter10, setLetter10] = useState<boolean | null>(false);
 
-  useEffect(() => {
-    identifyCorrectLetters();
-  });
-
   function identifyCorrectLetters() {
     let correctlyGuessedLetters: string[] = [];
     let counter = 0;
@@ -30,7 +30,7 @@ export function Word({ word, guessedLetter }: Props) {
       if (word[x] === guessedLetter) {
         counter++;
         correctlyGuessedLetters.push(word[x]);
-        console.log("Correct!");
+        return correctlyGuessedLetters;
       }
     }
   }
