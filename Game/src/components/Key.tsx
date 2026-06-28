@@ -1,11 +1,14 @@
 interface Props {
   letter: string;
+  handleClick: () => void;
 }
 
-export function Key({ letter }: Props) {
+export function Key({ letter, handleClick }: Props) {
   return (
     <>
-      <button className="key">{letter}</button>
+      <button className="key" onClick={handleClick}>
+        {letter}
+      </button>
     </>
   );
 }

@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 interface Props {
   letter: string | null;
   visable: boolean | null;
