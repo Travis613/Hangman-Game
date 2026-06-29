@@ -27,35 +27,37 @@ export default function App() {
     words[Math.floor(Math.random() * words.length)],
   );
 
-  const [count, setCount] = useState(1);
+  const [counter, setCounter] = useState(1);
 
   function checkLetter(letter: string) {
-    console.assert(letter !== undefined);
     for (let x = 0; x < word.length; x++) {
       if (word[x] === letter) {
         console.log(letter);
-      } else {
-        if (count === 1) {
-          setHead(true);
-        }
-        if (count === 2) {
-          setTorso(true);
-        }
-        if (count === 3) {
-          setLeftArm(true);
-        }
-        if (count === 4) {
-          setRightArm(true);
-        }
-        if (count === 5) {
-          setLeftLeg(true);
-        }
-        if (count === 6) {
-          setRightLeg(true);
-        }
-        setCount(count + 1);
+        return;
       }
     }
+    console.log(counter);
+    switch (counter) {
+      case 1:
+        setHead(true);
+        break;
+      case 2:
+        setTorso(true);
+        break;
+      case 3:
+        setRightArm(true);
+        break;
+      case 4:
+        setLeftArm(true);
+        break;
+      case 5:
+        setRightLeg(true);
+        break;
+      case 6:
+        setLeftLeg(true);
+        break;
+    }
+    setCounter(counter + 1);
   }
 
   console.log(word);
