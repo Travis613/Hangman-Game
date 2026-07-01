@@ -32,11 +32,43 @@ export default function App() {
   function checkLetter(letter: string) {
     for (let x = 0; x < word.length; x++) {
       if (word[x] === letter) {
-        console.log(letter);
+        const index = word.indexOf(word[x]) + 1; // add one because the first index is 0 and this is easier
+        console.assert(index !== undefined);
+        switch (index) {
+          case 1:
+            setLetter1(true);
+            break;
+          case 2:
+            setLetter2(true);
+            break;
+          case 3:
+            setLetter3(true);
+            break;
+          case 4:
+            setLetter4(true);
+            break;
+          case 5:
+            setLetter5(true);
+            break;
+          case 6:
+            setLetter6(true);
+            break;
+          case 7:
+            setLetter7(true);
+            break;
+          case 8:
+            setLetter8(true);
+            break;
+          case 9:
+            setLetter9(true);
+            break;
+          case 10:
+            setLetter10(true);
+            break;
+        }
         return;
       }
     }
-    console.log(counter);
     switch (counter) {
       case 1:
         setHead(true);
@@ -61,7 +93,6 @@ export default function App() {
   }
 
   console.log(word);
-
   return (
     <div className="documentBody">
       <div className="hangindSectionWithStickFigure">
