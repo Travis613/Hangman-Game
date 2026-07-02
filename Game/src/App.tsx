@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Stickman } from "./components/Stickman";
 import { words } from "../public/util";
+import { letters } from "../public/util";
 import { Letter } from "./components/Letter";
 import { Key } from "./components/Key";
 
@@ -92,7 +93,6 @@ export default function App() {
     setCounter(counter + 1);
   }
 
-  console.log(word);
   return (
     <div className="documentBody">
       <div className="hangindSectionWithStickFigure">
@@ -127,162 +127,14 @@ export default function App() {
       </div>
       <div className="keyboardSection">
         <div className="keyboard">
-          <Key
-            letter={"a"}
-            handleClick={() => {
-              checkLetter("a");
-            }}
-          />
-          <Key
-            letter={"b"}
-            handleClick={() => {
-              checkLetter("b");
-            }}
-          />
-          <Key
-            letter={"c"}
-            handleClick={() => {
-              checkLetter("c");
-            }}
-          />
-          <Key
-            letter={"d"}
-            handleClick={() => {
-              checkLetter("d");
-            }}
-          />
-          <Key
-            letter={"e"}
-            handleClick={() => {
-              checkLetter("e");
-            }}
-          />
-          <Key
-            letter={"f"}
-            handleClick={() => {
-              checkLetter("f");
-            }}
-          />
-          <Key
-            letter={"g"}
-            handleClick={() => {
-              checkLetter("g");
-            }}
-          />
-          <Key
-            letter={"h"}
-            handleClick={() => {
-              checkLetter("h");
-            }}
-          />
-          <Key
-            letter={"i"}
-            handleClick={() => {
-              checkLetter("i");
-            }}
-          />
-          <Key
-            letter={"j"}
-            handleClick={() => {
-              checkLetter("j");
-            }}
-          />
-          <Key
-            letter={"k"}
-            handleClick={() => {
-              checkLetter("k");
-            }}
-          />
-          <Key
-            letter={"l"}
-            handleClick={() => {
-              checkLetter("l");
-            }}
-          />
-          <Key
-            letter={"m"}
-            handleClick={() => {
-              checkLetter("m");
-            }}
-          />
-          <Key
-            letter={"n"}
-            handleClick={() => {
-              checkLetter("n");
-            }}
-          />
-          <Key
-            letter={"o"}
-            handleClick={() => {
-              checkLetter("o");
-            }}
-          />
-          <Key
-            letter={"p"}
-            handleClick={() => {
-              checkLetter("p");
-            }}
-          />
-          <Key
-            letter={"q"}
-            handleClick={() => {
-              checkLetter("q");
-            }}
-          />
-          <Key
-            letter={"r"}
-            handleClick={() => {
-              checkLetter("r");
-            }}
-          />
-          <Key
-            letter={"s"}
-            handleClick={() => {
-              checkLetter("s");
-            }}
-          />
-          <Key
-            letter={"t"}
-            handleClick={() => {
-              checkLetter("t");
-            }}
-          />
-          <Key
-            letter={"u"}
-            handleClick={() => {
-              checkLetter("u");
-            }}
-          />
-          <Key
-            letter={"v"}
-            handleClick={() => {
-              checkLetter("v");
-            }}
-          />
-          <Key
-            letter={"w"}
-            handleClick={() => {
-              checkLetter("w");
-            }}
-          />
-          <Key
-            letter={"x"}
-            handleClick={() => {
-              checkLetter("x");
-            }}
-          />
-          <Key
-            letter={"y"}
-            handleClick={() => {
-              checkLetter("y");
-            }}
-          />
-          <Key
-            letter={"z"}
-            handleClick={() => {
-              checkLetter("z");
-            }}
-          />
+          {letters.map((letter) => (
+            <Key
+              letter={letter}
+              handleClick={() => {
+                checkLetter(letter);
+              }}
+            />
+          ))}
         </div>
       </div>
     </div>
