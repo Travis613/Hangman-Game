@@ -6,35 +6,31 @@ import { Letter } from "./components/Letter";
 import { Key } from "./components/Key";
 
 export default function App() {
-  const [letter1, setLetter1] = useState<boolean | null>(false);
-  const [letter2, setLetter2] = useState<boolean | null>(false);
-  const [letter3, setLetter3] = useState<boolean | null>(false);
-  const [letter4, setLetter4] = useState<boolean | null>(false);
-  const [letter5, setLetter5] = useState<boolean | null>(false);
-  const [letter6, setLetter6] = useState<boolean | null>(false);
-  const [letter7, setLetter7] = useState<boolean | null>(false);
-  const [letter8, setLetter8] = useState<boolean | null>(false);
-  const [letter9, setLetter9] = useState<boolean | null>(false);
-  const [letter10, setLetter10] = useState<boolean | null>(false);
-
+  const [letter1, setLetter1] = useState<boolean>(false);
+  const [letter2, setLetter2] = useState<boolean>(false);
+  const [letter3, setLetter3] = useState<boolean>(false);
+  const [letter4, setLetter4] = useState<boolean>(false);
+  const [letter5, setLetter5] = useState<boolean>(false);
+  const [letter6, setLetter6] = useState<boolean>(false);
+  const [letter7, setLetter7] = useState<boolean>(false);
+  const [letter8, setLetter8] = useState<boolean>(false);
+  const [letter9, setLetter9] = useState<boolean>(false);
+  const [letter10, setLetter10] = useState<boolean>(false);
   const [head, setHead] = useState(false);
   const [torso, setTorso] = useState(false);
   const [leftArm, setLeftArm] = useState(false);
   const [rightArm, setRightArm] = useState(false);
   const [leftLeg, setLeftLeg] = useState(false);
   const [rightLeg, setRightLeg] = useState(false);
-
   const [word, setWord] = useState<string>(
     words[Math.floor(Math.random() * words.length)],
   );
-
   const [counter, setCounter] = useState(1);
 
   function checkLetter(letter: string) {
     for (let x = 0; x < word.length; x++) {
       if (word[x] === letter) {
-        const index = word.indexOf(word[x]) + 1; // add one because the first index is 0 and this is easier
-        console.assert(index !== undefined);
+        const index = word.indexOf(word[x]) + 1;
         switch (index) {
           case 1:
             setLetter1(true);
@@ -92,7 +88,7 @@ export default function App() {
     }
     setCounter(counter + 1);
   }
-
+  console.log(word);
   return (
     <div className="documentBody">
       <div className="hangindSectionWithStickFigure">
@@ -129,6 +125,7 @@ export default function App() {
         <div className="keyboard">
           {letters.map((letter) => (
             <Key
+              key={letter}
               letter={letter}
               handleClick={() => {
                 checkLetter(letter);

@@ -1,9 +1,14 @@
 export const words: string[] = [
-  "blackjovy",
-  "downbrick",
-  "jumpcloak",
-  "waveforms",
-  "flashpoint",
+  "basketball",
+  "assessment",
+  "committee",
+  "bookkeeper",
+  "peppermint",
+  "friendship",
+  "watermelon",
+  "government",
+  "motorcycle",
+  "basketwork",
 ];
 
 export const letters: string[] = [

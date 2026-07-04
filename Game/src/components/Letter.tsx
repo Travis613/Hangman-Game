@@ -1,6 +1,6 @@
 interface Props {
   letter: string | null;
-  visable: boolean | null;
+  visable: boolean;
 }
 
 export function Letter({ letter, visable }: Props) {
