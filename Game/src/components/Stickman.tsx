@@ -1,47 +1,45 @@
-import { useState } from "react";
-
 interface Props {
-  head: boolean;
-  torso: boolean;
-  leftArm: boolean;
-  rightArm: boolean;
-  leftLeg: boolean;
-  rightLeg: boolean;
+  numberOfWrongGuesses: number;
 }
 
-export function Stickman({
-  head,
-  torso,
-  leftArm,
-  rightArm,
-  leftLeg,
-  rightLeg,
-}: Props) {
+export function Stickman({ numberOfWrongGuesses }: Props) {
   return (
     <>
       <div
         className="head redunantStyles"
-        style={{ visibility: head ? "visible" : "hidden" }}
+        style={{
+          visibility: numberOfWrongGuesses > 0 ? "visible" : "hidden",
+        }}
       />
       <div
         className="torso redunantStyles"
-        style={{ visibility: torso ? "visible" : "hidden" }}
+        style={{
+          visibility: numberOfWrongGuesses > 1 ? "visible" : "hidden",
+        }}
       />
       <div
         className="leftArm redunantStyles"
-        style={{ visibility: leftArm ? "visible" : "hidden" }}
+        style={{
+          visibility: numberOfWrongGuesses > 2 ? "visible" : "hidden",
+        }}
       />
       <div
         className="rightArm redunantStyles"
-        style={{ visibility: rightArm ? "visible" : "hidden" }}
+        style={{
+          visibility: numberOfWrongGuesses > 3 ? "visible" : "hidden",
+        }}
       />
       <div
         className="leftLeg redunantStyles"
-        style={{ visibility: leftLeg ? "visible" : "hidden" }}
+        style={{
+          visibility: numberOfWrongGuesses > 4 ? "visible" : "hidden",
+        }}
       />
       <div
         className="rightLeg redunantStyles"
-        style={{ visibility: rightLeg ? "visible" : "hidden" }}
+        style={{
+          visibility: numberOfWrongGuesses > 5 ? "visible" : "hidden",
+        }}
       />
     </>
   );
