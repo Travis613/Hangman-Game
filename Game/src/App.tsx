@@ -22,6 +22,9 @@ export default function App() {
   console.log(wrongGuesses);
   return (
     <div className="documentBody">
+      <div>
+        {wrongGuesses === 6 ? <p>You Lose, Refresh To Play Again</p> : <p></p>}
+      </div>
       <div className="hangindSectionWithStickFigure">
         <div className="hangingStand">
           <div className="horizontalTopPost redunantStyles" />
