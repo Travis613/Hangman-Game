@@ -6,11 +6,11 @@ import { Key } from "./components/Key";
 import { Word } from "./components/Word";
 
 export default function App() {
-  const [word, setWord] = useState<string>(
-    words[Math.floor(Math.random() * words.length)],
-  );
   const [gussedLetters, setGuessedLetters] = useState<string[]>([]);
   const [wrongGuesses, setWrongGuesses] = useState(0);
+  const [word, setWord] = useState(
+    words[Math.floor(Math.random() * words.length)],
+  );
 
   function keyClicked(letter: string) {
     setGuessedLetters([...gussedLetters, letter]);
@@ -18,8 +18,6 @@ export default function App() {
       setWrongGuesses(wrongGuesses + 1);
     }
   }
-  console.log(word);
-  console.log(wrongGuesses);
   return (
     <div className="documentBody">
       <div>
