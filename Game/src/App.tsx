@@ -8,9 +8,7 @@ import { Word } from "./components/Word";
 export default function App() {
   const [gussedLetters, setGuessedLetters] = useState<string[]>([]);
   const [wrongGuesses, setWrongGuesses] = useState(0);
-  const [word, setWord] = useState(
-    words[Math.floor(Math.random() * words.length)],
-  );
+  const [word] = useState(words[Math.floor(Math.random() * words.length)]);
 
   function keyClicked(letter: string) {
     setGuessedLetters([...gussedLetters, letter]);
@@ -18,6 +16,7 @@ export default function App() {
       setWrongGuesses(wrongGuesses + 1);
     }
   }
+
   return (
     <div className="documentBody">
       <div>
@@ -34,7 +33,11 @@ export default function App() {
           </div>
         </div>
       </div>
-      <Word word={word} guessedLetters={gussedLetters} />
+      <Word
+        word={word}
+        guessedLetters={gussedLetters}
+        gameOver={wrongGuesses === 6 ? true : false}
+      />
       <div className="keyboardSection">
         <div className="keyboard">
           {letters.map((letter) => (
