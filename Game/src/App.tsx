@@ -6,21 +6,27 @@ import { Key } from "./components/Key";
 import { Word } from "./components/Word";
 
 export default function App() {
-  const [gussedLetters, setGuessedLetters] = useState<string[]>([]);
+  const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
   const [wrongGuesses, setWrongGuesses] = useState(0);
   const [word] = useState(words[Math.floor(Math.random() * words.length)]);
 
   function keyClicked(letter: string) {
-    setGuessedLetters([...gussedLetters, letter]);
+    setGuessedLetters([...guessedLetters, letter]);
     if (!word.includes(letter)) {
       setWrongGuesses(wrongGuesses + 1);
     }
-  }
 
+    {
+    }
+  }
+  console.log(word);
   return (
     <div className="documentBody">
       <div>
-        {wrongGuesses === 6 ? <p>You Lose, Refresh To Play Again</p> : <p></p>}
+        {wrongGuesses === 6 ? "you lose" : ""}{" "}
+        {word.split("").every((letter) => guessedLetters.includes(letter))
+          ? "you win"
+          : ""}
       </div>
       <div className="hangindSectionWithStickFigure">
         <div className="hangingStand">
@@ -35,7 +41,7 @@ export default function App() {
       </div>
       <Word
         word={word}
-        guessedLetters={gussedLetters}
+        guessedLetters={guessedLetters}
         gameOver={wrongGuesses === 6 ? true : false}
       />
       <div className="keyboardSection">
