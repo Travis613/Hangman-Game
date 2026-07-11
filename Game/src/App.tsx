@@ -15,11 +15,8 @@ export default function App() {
     if (!word.includes(letter)) {
       setWrongGuesses(wrongGuesses + 1);
     }
-
-    {
-    }
   }
-  console.log(word);
+  
   return (
     <div className="documentBody">
       <div>
